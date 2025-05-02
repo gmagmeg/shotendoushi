@@ -70,6 +70,12 @@ const BookstoreSearch: React.FC = () => {
     filterBookstores(value);
   };
 
+  // フィルタリングのクリア
+  const handleClearFilter = () => {
+    setSelectedPrefecture('');
+    setFilteredBookstores(allBookstores);
+  };
+
   // 書店のフィルタリング
   const filterBookstores = (prefecture: string) => {
     let filtered = [...allBookstores];
@@ -101,19 +107,30 @@ const BookstoreSearch: React.FC = () => {
                 <label htmlFor="prefectureFilter" className="filter-label">
                   都道府県で絞り込み:
                 </label>
-                <select
-                  id="prefectureFilter"
-                  className="filter-select"
-                  value={selectedPrefecture}
-                  onChange={handlePrefectureChange}
-                >
-                  <option value="">すべての都道府県</option>
-                  {availablePrefectures.map(prefecture => (
-                    <option key={prefecture} value={prefecture}>
-                      {prefecture}
-                    </option>
-                  ))}
-                </select>
+                <div className="filter-row">
+                  <select
+                    id="prefectureFilter"
+                    className="filter-select"
+                    value={selectedPrefecture}
+                    onChange={handlePrefectureChange}
+                  >
+                    <option value="">すべての都道府県</option>
+                    {availablePrefectures.map(prefecture => (
+                      <option key={prefecture} value={prefecture}>
+                        {prefecture}
+                      </option>
+                    ))}
+                  </select>
+                  <button
+                    type="button"
+                    onClick={handleClearFilter}
+                    className="clear-filter-button"
+                    aria-label="フィルタリングをクリア"
+                    disabled={!selectedPrefecture}
+                  >
+                    クリア
+                  </button>
+                </div>
               </div>
             </div>
           </div>
