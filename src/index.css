@@ -847,9 +847,22 @@ input:focus, select:focus, textarea:focus {
 .bookstore-image {
   flex: 0 0 auto;
   width: 150px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden; /* はみ出した画像を切り取る */
+  position: relative; /* 画像のposition:absoluteの基準に */
+}
+
+.bookstore-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.2s ease; /* 読み込み時に滑らかに表示 */
 }
 
 @media (max-width: 600px) {

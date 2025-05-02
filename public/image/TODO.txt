@@ -1,0 +1,13 @@
+重要: 次の画像ファイルをこのディレクトリに追加してください。
+
+1. default.jpg - デフォルト画像（画像がない場合や読み込みエラー時に表示）
+2. 各書店の画像ファイル（bookstores.jsonのimageプロパティで指定）:
+   - GpbDxE8W4AA8n9e.jpg
+   - Gp6DOqQawAQ46iL.jpg
+   - GoEQrYfbwAAEeDX.jpg
+   - Gp10Lh7aYAEetUm.jpg
+   - GpDHDzMaUAA4PSZ.jpg
+   - GXHfetmbEAIntmH.jpg
+   - GmDIhoUbcAI3maz.jpg
+
+注: 画像サイズは横300px×縦150px程度が推奨です。 

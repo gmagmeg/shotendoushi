@@ -9,7 +9,7 @@
     "prefecture": "新潟県",
     "xaccount": "https://www.miraiyashoten.co.jp/shop/%E6%9C%AA%E6%9D%A5%E5%B1%8B%E6%9B%B8%E5%BA%97%E6%96%B0%E6%BD%9F%E5%8D%97/",
     "url": "https://www.futurehouse.co.jp/shop/naga/",
-    "image": "./image/GpbDxE8W4AA8n9e.jpg"
+    "image": "/image/GpbDxE8W4AA8n9e.jpg"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "prefecture": "愛知県",
     "xaccount": "https://x.com/seibunkanhonten",
     "url": "https://www.seibunkan.co.jp/",
-    "image": "./image/Gp6DOqQawAQ46iL.jpg"
+    "image": "/image/Gp6DOqQawAQ46iL.jpg"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "prefecture": "神奈川県",
     "xaccount": "https://x.com/ACADEMIA_kohoku",
     "url": "https://www.kumabook.com/shop/kouhoku/",
-    "image": "./image/GoEQrYfbwAAEeDX.jpg"
+    "image": "/image/GoEQrYfbwAAEeDX.jpg"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "prefecture": "兵庫県",
     "xaccount": "https://x.com/ms_itamikoya",
     "url": "https://www.miraiyashoten.co.jp/shop/%E6%9C%AA%E6%9D%A5%E5%B1%8B%E6%9B%B8%E5%BA%97%E4%BC%8A%E4%B8%B9%E6%98%86%E9%99%BD/",
-    "image": "./image/Gp10Lh7aYAEetUm.jpg"
+    "image": "/image/Gp10Lh7aYAEetUm.jpg"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "prefecture": "茨城県",
     "xaccount": "https://x.com/ms_mitouchihara",
     "url": "https://www.miraiyashoten.co.jp/shop/%E6%9C%AA%E6%9D%A5%E5%B1%8B%E6%9B%B8%E5%BA%97%E6%B0%B4%E6%88%B8%E5%86%85%E5%8E%9F/",
-    "image": "./image/GpDHDzMaUAA4PSZ.jpg"
+    "image": "/image/GpDHDzMaUAA4PSZ.jpg"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "prefecture": "東京都",
     "xaccount": "https://x.com/tsutaya2812?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1726957392213233774%7Ctwgr%5E39845b45c2cd3e8b7f2ba61e6c8d8488d425a3e8%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fholoch.blog.jp%2Farchives%2F23713761.html",
     "url": "https://store-tsutaya.tsite.jp/store/detail?storeId=2812",
-    "image": "./image/GXHfetmbEAIntmH.jpg"
+    "image": "/image/GXHfetmbEAIntmH.jpg"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "prefecture": "東京都",
     "xaccount": "https://x.com/Kino_Kichijoji",
     "url": "https://store.kinokuniya.co.jp/store/kichijoji-tokyu-store/",
-    "image": "./image/GmDIhoUbcAI3maz.jpg"
+    "image": "/image/GmDIhoUbcAI3maz.jpg"
   },
   {
     "id": 8,
@@ -93,6 +93,6 @@
     "prefecture": "北海道",
     "xaccount": "https://x.com/CoachandFour_JP",
     "url": "https://www.coachandfour-myunhen.jp/",
-    "image": "./image/default.jpg"
+    "image": "/image/default.jpg"
   }
 ]

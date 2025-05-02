@@ -183,17 +183,19 @@ const BookstoreSearch: React.FC = () => {
                   </div>
                   <div className="bookstore-image">
                     <img
-                      src={bookstore.image || './image/default.jpg'}
+                      src={bookstore.image?.replace('./image/', '/image/') || '/image/default.jpg'}
                       alt={`${bookstore.name}の外観`}
                       style={{
-                        maxWidth: '100%',
-                        maxHeight: '150px',
+                        width: '100%',
+                        height: '150px',
                         objectFit: 'cover',
-                        borderRadius: '4px'
+                        borderRadius: '4px',
+                        backgroundColor: '#f0f0f0'
                       }}
+                      loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = './image/default.jpg';
+                        target.src = '/image/default.jpg';
                       }}
                     />
                   </div>
