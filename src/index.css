@@ -13,7 +13,8 @@
   line-height: 1.6;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* ダークモードを無効化 */
+  color-scheme: light;
   color: var(--text-color);
   background-color: var(--background-color);
 
@@ -51,6 +52,7 @@ body {
 
 .bookstore-search-container {
   width: 100%;
+  background-color: var(--background-color);
 }
 
 .app-header {
@@ -230,12 +232,14 @@ body {
   text-decoration: underline;
 }
 
+/* ダークモードでもno-results, loading表示を白ベースにする */
 .no-results, .loading {
   text-align: center;
   padding: 2rem;
   background-color: var(--light-gray);
   border-radius: 8px;
   margin-top: 1rem;
+  color: var(--text-color);
 }
 
 .error-container {
@@ -262,41 +266,39 @@ body {
   }
 }
 
+/* ダークモード対応を上書き */
 @media (prefers-color-scheme: dark) {
   :root {
-    color: #f5f5f5;
-    background-color: #242424;
+    color: #333;
+    background-color: #ffffff;
   }
   
   body {
-    background-color: #242424;
+    background-color: #ffffff;
   }
   
-  .postal-code-search-form, .no-results, .loading {
-    background-color: #333;
+  .filter-section {
+    background-color: var(--light-gray);
   }
   
-  .store-item {
-    background-color: #333;
-    border-color: #444;
+  .bookstore-card, .bookstore-list-item {
+    background-color: white;
+    border-color: var(--border-color);
   }
   
-  .form-input {
-    background-color: #444;
-    color: #f5f5f5;
-    border-color: #666;
+  .filter-input,
+  .filter-select {
+    background-color: white;
+    color: #333;
+    border-color: var(--border-color);
   }
-  
+
+  .store-name, .bookstore-name, .bookstore-name a, .maps-link, .section-title {
+    color: var(--primary-color);
+  }
+
   .app-header h1 {
-    color: #4dabf7;
-  }
-  
-  .store-name {
-    color: #4dabf7;
-  }
-  
-  .maps-link {
-    color: #4dabf7;
+    color: var(--primary-color);
   }
 }
 

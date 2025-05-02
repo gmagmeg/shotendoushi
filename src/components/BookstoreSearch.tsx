@@ -89,17 +89,17 @@ const BookstoreSearch: React.FC = () => {
   };
 
   return (
-    <div className="bookstore-search-container">
-      <header className="app-header">
+    <div className="bookstore-search-container" style={{ backgroundColor: '#ffffff' }}>
+      <header className="app-header" style={{ backgroundColor: '#ffffff' }}>
         <h1>書店検索</h1>
         <p className="app-description">
           お近くの書店を検索、またはリストから探せます
         </p>
       </header>
 
-      <main>
-        <section className="search-section">
-          <div className="filter-section">
+      <main style={{ backgroundColor: '#ffffff' }}>
+        <section className="search-section" style={{ backgroundColor: '#ffffff' }}>
+          <div className="filter-section" style={{ backgroundColor: '#f5f5f5' }}>
             <h2 className="section-title">書店を絞り込む</h2>
 
             <div className="filter-controls">
@@ -113,6 +113,7 @@ const BookstoreSearch: React.FC = () => {
                     className="filter-select"
                     value={selectedPrefecture}
                     onChange={handlePrefectureChange}
+                    style={{ backgroundColor: '#ffffff' }}
                   >
                     <option value="">すべての都道府県</option>
                     {availablePrefectures.map(prefecture => (
@@ -127,6 +128,7 @@ const BookstoreSearch: React.FC = () => {
                     className="clear-filter-button"
                     aria-label="フィルタリングをクリア"
                     disabled={!selectedPrefecture}
+                    style={{ backgroundColor: '#f8f8f8' }}
                   >
                     クリア
                   </button>
@@ -136,33 +138,34 @@ const BookstoreSearch: React.FC = () => {
           </div>
         </section>
 
-        <section className="bookstore-list-section">
+        <section className="bookstore-list-section" style={{ backgroundColor: '#ffffff' }}>
           <h2 className="section-title">書店一覧 ({filteredBookstores.length}件)</h2>
           <div className="bookstore-list">
             {filteredBookstores.map(bookstore => (
-              <div key={bookstore.id} className="bookstore-list-item">
+              <div key={bookstore.id} className="bookstore-list-item" style={{ backgroundColor: '#ffffff' }}>
                 <h3 className="bookstore-name">
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${bookstore.latitude},${bookstore.longitude}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    style={{ color: '#3498db' }}
                   >
                     {bookstore.name}
                   </a>
                 </h3>
-                <p className="bookstore-prefecture">{bookstore.prefecture}</p>
-                <p className="bookstore-address">{bookstore.address}</p>
-                <p className="bookstore-phone">TEL: {bookstore.phone}</p>
+                <p className="bookstore-prefecture" style={{ color: '#666' }}>{bookstore.prefecture}</p>
+                <p className="bookstore-address" style={{ color: '#555' }}>{bookstore.address}</p>
+                <p className="bookstore-phone" style={{ color: '#555' }}>TEL: {bookstore.phone}</p>
                 <div className="bookstore-tags">
-                  <span className="tag">MAP</span>
-                  {bookstore.phone && <span className="tag">TEL</span>}
+                  <span className="tag" style={{ backgroundColor: '#3498db' }}>MAP</span>
+                  {bookstore.phone && <span className="tag" style={{ backgroundColor: '#3498db' }}>TEL</span>}
                 </div>
               </div>
             ))}
           </div>
 
           {filteredBookstores.length === 0 && !isLoading && (
-            <div className="no-results" role="status">
+            <div className="no-results" role="status" style={{ backgroundColor: '#f5f5f5', color: '#333' }}>
               <p>条件に一致する書店が見つかりませんでした。検索条件を変更してください。</p>
             </div>
           )}

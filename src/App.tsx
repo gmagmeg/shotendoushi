@@ -5,7 +5,7 @@ import BookstoreSearch from './components/BookstoreSearch'
 function App() {
   return (
     <Router>
-      <div className="app-container">
+      <div className="app-container" style={{ backgroundColor: '#ffffff' }}>
         <Routes>
           <Route path="/" element={<BookstoreSearch />} />
         </Routes>
