@@ -777,3 +777,55 @@ body {
     border-color: #444;
   }
 }
+
+/* セレクトボックスのスタイル上書き */
+select, option {
+  color: #333 !important;
+  background-color: #ffffff !important;
+}
+
+select:focus {
+  border-color: #3498db !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2) !important;
+}
+
+.filter-select {
+  background-color: #ffffff !important;
+  color: #333 !important;
+  border: 1px solid #ddd !important;
+}
+
+/* フォーム要素のスタイル強制適用 */
+input, select, textarea, button, option {
+  color: #333 !important;
+  background-color: #ffffff !important;
+}
+
+input::placeholder {
+  color: #999 !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #3498db !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2) !important;
+}
+
+/* ボタン要素のスタイル */
+.clear-filter-button {
+  background-color: #f8f8f8 !important;
+  color: #666 !important;
+  border: 1px solid #ddd !important;
+}
+
+.clear-filter-button:hover:not(:disabled) {
+  background-color: #eee !important;
+  color: #e74c3c !important;
+}
+
+.clear-filter-button:disabled {
+  opacity: 0.5 !important;
+  background-color: #f8f8f8 !important;
+  color: #999 !important;
+}

@@ -113,11 +113,15 @@ const BookstoreSearch: React.FC = () => {
                     className="filter-select"
                     value={selectedPrefecture}
                     onChange={handlePrefectureChange}
-                    style={{ backgroundColor: '#ffffff' }}
+                    style={{
+                      backgroundColor: '#ffffff',
+                      color: '#333',
+                      border: '1px solid #ddd'
+                    }}
                   >
-                    <option value="">すべての都道府県</option>
+                    <option value="" style={{ color: '#333' }}>すべての都道府県</option>
                     {availablePrefectures.map(prefecture => (
-                      <option key={prefecture} value={prefecture}>
+                      <option key={prefecture} value={prefecture} style={{ color: '#333' }}>
                         {prefecture}
                       </option>
                     ))}
