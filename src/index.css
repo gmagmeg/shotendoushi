@@ -141,9 +141,9 @@ body {
 
 /* 検索結果一覧 */
 .bookstore-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -396,335 +396,35 @@ body {
   text-align: center;
 }
 
-/* リザルトヘッダーのスタイル修正 */
-.results-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-/* 都道府県別書店一覧（シネマリスト風） */
-.theater-list {
-  width: 100%;
-}
-
-.region-group {
-  margin-bottom: 1rem;
-  background-color: #f8f8f8;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.region-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #f0f0f0;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.region-header:hover {
-  background-color: #e8e8e8;
-}
-
-.region-header.expanded {
-  background-color: #e0e0e0;
-}
-
-.region-title {
-  display: flex;
-  flex-direction: column;
-}
-
-.region-title h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.region-name-en {
-  margin: 0;
-  font-size: 0.8rem;
-  color: #666;
-  text-transform: uppercase;
-}
-
-.region-toggle {
-  font-size: 0.8rem;
-  color: #666;
-}
-
-.region-content {
-  padding: 0.5rem 1rem 1rem;
-}
-
-.prefecture-section {
-  margin-bottom: 1.5rem;
-}
-
-.prefecture-header {
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid #ddd;
-}
-
-.prefecture-name {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #444;
-}
-
-.prefecture-name-en {
-  margin: 0;
-  font-size: 0.7rem;
-  color: #888;
-}
-
-.bookstore-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-.bookstore-item {
-  padding: 0.75rem;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.bookstore-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.bookstore-name {
-  margin: 0 0 0.5rem;
-  font-size: 1rem;
-}
-
-.bookstore-name a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.bookstore-name a:hover {
-  text-decoration: underline;
-}
-
-.bookstore-address, .bookstore-phone {
-  margin: 0 0 0.25rem;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.bookstore-tags {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.tag {
-  display: inline-block;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.7rem;
-  color: white;
-  background-color: var(--primary-color);
-  border-radius: 3px;
-}
-
-@media (max-width: 768px) {
-  .bookstore-items {
+/* レスポンシブ対応 */
+@media (max-width: 992px) {
+  .bookstore-list {
     grid-template-columns: 1fr;
   }
-}
-
-/* 書店検索ページのレイアウト変更 */
-.search-options {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 992px) {
-  .search-options {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.filter-section {
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  background-color: var(--light-gray);
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: var(--box-shadow);
-}
-
-.section-title {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 0.5rem;
-}
-
-/* フィルタリングコントロール */
-.filter-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.filter-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.filter-row {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.filter-label {
-  font-weight: bold;
-}
-
-.filter-input,
-.filter-select {
-  padding: 0.75rem;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 1rem;
-  flex: 1;
-}
-
-.filter-input:focus,
-.filter-select:focus {
-  border-color: var(--primary-color);
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-}
-
-.clear-filter-button {
-  padding: 0.75rem 1rem;
-  background-color: #f8f8f8;
-  color: #666;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.clear-filter-button:hover:not(:disabled) {
-  background-color: #eee;
-  color: var(--error-color);
-}
-
-.clear-filter-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* 書店グリッド表示 */
-.bookstore-list-section {
-  margin-top: 2rem;
-}
-
-.bookstore-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.bookstore-card {
-  background-color: white;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.25rem;
-  box-shadow: var(--box-shadow);
-  transition: transform 0.2s;
-  position: relative;
-}
-
-.bookstore-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.bookstore-name {
-  margin: 0 0 0.5rem;
-  font-size: 1.2rem;
-}
-
-.bookstore-name a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.bookstore-name a:hover {
-  text-decoration: underline;
-}
-
-.bookstore-prefecture {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0 0 0.75rem;
-}
-
-.bookstore-address, 
-.bookstore-phone {
-  margin: 0 0 0.5rem;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.bookstore-tags {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-
-/* 検索結果セクション修正 */
-.results-section {
-  margin-top: 1rem;
-  border-top: 1px solid var(--border-color);
-  padding-top: 1rem;
-}
-
-/* 結果ヘッダーのスタイル修正 */
-.results-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.list-title {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
+  
   .search-options {
     grid-template-columns: 1fr;
   }
   
   .bookstore-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .bookstore-content {
+    flex-direction: column;
+  }
+  
+  .bookstore-image {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .bookstore-image img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
   }
 }
 
@@ -749,9 +449,9 @@ body {
 
 /* 書店リスト表示 */
 .bookstore-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -817,6 +517,12 @@ input:focus, select:focus, textarea:focus {
   background-color: #f8f8f8 !important;
   color: #666 !important;
   border: 1px solid #ddd !important;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .clear-filter-button:hover:not(:disabled) {
@@ -830,7 +536,78 @@ input:focus, select:focus, textarea:focus {
   color: #999 !important;
 }
 
+/* フィルタリングコントロール */
+.filter-section {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.filter-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-label {
+  font-weight: bold;
+}
+
+.filter-input,
+.filter-select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+/* 書店リストセクション */
+.bookstore-list-section {
+  margin-top: 2rem;
+}
+
 /* 書店リストのレイアウト調整 */
+.bookstore-list-item {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookstore-list-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .bookstore-content {
   display: flex;
   flex-direction: row;
@@ -865,21 +642,46 @@ input:focus, select:focus, textarea:focus {
   transition: opacity 0.2s ease; /* 読み込み時に滑らかに表示 */
 }
 
-@media (max-width: 600px) {
-  .bookstore-content {
-    flex-direction: column;
-  }
-  
-  .bookstore-image {
-    width: 100%;
-    margin-top: 1rem;
-  }
-  
-  .bookstore-image img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-  }
+.bookstore-name {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.bookstore-name a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.bookstore-name a:hover {
+  text-decoration: underline;
+}
+
+.bookstore-prefecture {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 0.75rem;
+}
+
+.bookstore-address, 
+.bookstore-phone {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.bookstore-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 3px;
 }
 
 .bookstore-url {
