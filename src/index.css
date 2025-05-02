@@ -550,8 +550,9 @@ body {
   }
 }
 
-.distance-search,
 .filter-section {
+  max-width: 600px;
+  margin: 0 auto 2rem;
   background-color: var(--light-gray);
   border-radius: 8px;
   padding: 1.5rem;
@@ -692,7 +693,6 @@ body {
 
 /* ダークモード対応 */
 @media (prefers-color-scheme: dark) {
-  .distance-search,
   .filter-section {
     background-color: #333;
   }

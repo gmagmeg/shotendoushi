@@ -4,7 +4,6 @@ import BookstoreList from './BookstoreList';
 import { Bookstore } from '../types';
 import { getCoordinatesFromPostalCode } from '../utils/distance';
 import { findBookstoresWithinRadius, getAllBookstores } from '../utils/bookstoreService';
-import { prefectures } from '../data/prefectures';
 
 const BookstoreSearch: React.FC = () => {
   const [searchResults, setSearchResults] = useState<{ bookstore: Bookstore; distance: number }[]>([]);
@@ -14,11 +13,19 @@ const BookstoreSearch: React.FC = () => {
   const [hasSearched, setHasSearched] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedPrefecture, setSelectedPrefecture] = useState<string>('');
+  const [availablePrefectures, setAvailablePrefectures] = useState<string[]>([]);
 
   // 初期化時に全書店データを取得
   useEffect(() => {
-    setAllBookstores(getAllBookstores());
-    setFilteredBookstores(getAllBookstores());
+    const bookstores = getAllBookstores();
+    setAllBookstores(bookstores);
+    setFilteredBookstores(bookstores);
+
+    // 登録されている都道府県のリストを生成
+    const prefectures = [...new Set(bookstores.map(store => store.prefecture)
+      .filter((pref): pref is string => pref !== undefined))]
+      .sort();
+    setAvailablePrefectures(prefectures);
   }, []);
 
   // 検索処理
@@ -80,69 +87,33 @@ const BookstoreSearch: React.FC = () => {
       <header className="app-header">
         <h1>書店検索</h1>
         <p className="app-description">
-          お近くの書店を郵便番号から検索、またはリストから探せます
+          お近くの書店を検索、またはリストから探せます
         </p>
       </header>
 
       <main>
         <section className="search-section">
-          <div className="search-options">
-            <div className="distance-search">
-              <h2 className="section-title">距離で検索</h2>
-              <PostalCodeSearchForm
-                onSearch={handleSearch}
-                isLoading={isLoading}
-              />
+          <div className="filter-section">
+            <h2 className="section-title">書店を絞り込む</h2>
 
-              {error && (
-                <div className="error-container" role="alert">
-                  <p className="error-message">{error}</p>
-                </div>
-              )}
-
-              {hasSearched && (
-                <div className="results-section">
-                  <div className="results-header">
-                    <h3 className="list-title">検索結果 ({searchResults.length}件)</h3>
-                    <button
-                      type="button"
-                      onClick={handleClear}
-                      className="clear-button"
-                      aria-label="検索結果をクリア"
-                    >
-                      クリア
-                    </button>
-                  </div>
-                  <BookstoreList
-                    bookstores={searchResults}
-                    isLoading={isLoading}
-                  />
-                </div>
-              )}
-            </div>
-
-            <div className="filter-section">
-              <h2 className="section-title">書店を絞り込む</h2>
-
-              <div className="filter-controls">
-                <div className="filter-group">
-                  <label htmlFor="prefectureFilter" className="filter-label">
-                    都道府県で絞り込み:
-                  </label>
-                  <select
-                    id="prefectureFilter"
-                    className="filter-select"
-                    value={selectedPrefecture}
-                    onChange={handlePrefectureChange}
-                  >
-                    <option value="">すべての都道府県</option>
-                    {prefectures.map(pref => (
-                      <option key={pref.code} value={pref.name}>
-                        {pref.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+            <div className="filter-controls">
+              <div className="filter-group">
+                <label htmlFor="prefectureFilter" className="filter-label">
+                  都道府県で絞り込み:
+                </label>
+                <select
+                  id="prefectureFilter"
+                  className="filter-select"
+                  value={selectedPrefecture}
+                  onChange={handlePrefectureChange}
+                >
+                  <option value="">すべての都道府県</option>
+                  {availablePrefectures.map(prefecture => (
+                    <option key={prefecture} value={prefecture}>
+                      {prefecture}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>
