@@ -91,7 +91,7 @@ const BookstoreSearch: React.FC = () => {
   return (
     <div className="bookstore-search-container" style={{ backgroundColor: '#ffffff' }}>
       <header className="app-header" style={{ backgroundColor: '#ffffff' }}>
-        <h1>書店検索</h1>
+        <h1>あなたの街の書店"同士</h1>
         <p className="app-description">
           お近くの書店を検索、またはリストから探せます
         </p>

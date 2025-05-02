@@ -1,92 +1,98 @@
 [
   {
     "id": 1,
-    "name": "紀伊國屋書店 新宿本店",
-    "address": "東京都新宿区新宿3-17-7",
-    "latitude": 35.6908,
-    "longitude": 139.7031,
-    "phone": "03-3354-0131",
-    "prefecture": "東京都"
+    "name": "未来屋書店　新潟南店",
+    "address": "新潟県新潟市江南区下早通柳田1丁目1番1号",
+    "latitude": 37.87700481273266,
+    "longitude": 139.08009078284047,
+    "phone": "025-381-9100",
+    "prefecture": "新潟県",
+    "xaccount": "https://www.miraiyashoten.co.jp/shop/%E6%9C%AA%E6%9D%A5%E5%B1%8B%E6%9B%B8%E5%BA%97%E6%96%B0%E6%BD%9F%E5%8D%97/",
+    "url": "https://www.futurehouse.co.jp/shop/naga/",
+    "image": "./image/GpbDxE8W4AA8n9e.jpg"
   },
   {
     "id": 2,
-    "name": "丸善 丸の内本店",
-    "address": "東京都千代田区丸の内1-6-4 丸の内オアゾ1〜4F",
-    "latitude": 35.6818,
-    "longitude": 139.7649,
-    "phone": "03-5288-8881",
-    "prefecture": "東京都"
+    "name": "精文館書店 豊橋本店",
+    "address": "愛知県豊橋市広小路1-6",
+    "latitude": 34.76473276169385,
+    "longitude": 137.38378145486362,
+    "phone": "0532-52-1111",
+    "prefecture": "愛知県",
+    "xaccount": "https://x.com/seibunkanhonten",
+    "url": "https://www.seibunkan.co.jp/",
+    "image": "./image/Gp6DOqQawAQ46iL.jpg"
   },
   {
     "id": 3,
-    "name": "有隣堂 横浜駅西口店",
-    "address": "神奈川県横浜市西区南幸1-4-B1F ジョイナス",
-    "latitude": 35.4657,
-    "longitude": 139.6223,
-    "phone": "045-311-6265",
-    "prefecture": "神奈川県"
+    "name": "くまざわ書店 ACADEMIA港北店",
+    "address": "神奈川県横浜市都筑区中川中央１丁目２５−１ ノースポートモール ３階",
+    "latitude": 35.55149479575837,
+    "longitude": 139.5790051275923,
+    "phone": "045-914-3320",
+    "prefecture": "神奈川県",
+    "xaccount": "https://x.com/ACADEMIA_kohoku",
+    "url": "https://www.kumabook.com/shop/kouhoku/",
+    "image": "./image/GoEQrYfbwAAEeDX.jpg"
   },
   {
     "id": 4,
-    "name": "三省堂書店 池袋本店",
-    "address": "東京都豊島区南池袋1-28-1 西武池袋本店別館7F・8F",
-    "latitude": 35.7292,
-    "longitude": 139.7115,
-    "phone": "03-6864-8900",
-    "prefecture": "東京都"
+    "name": "未来屋書店 伊丹昆陽店",
+    "address": "兵庫県伊丹市池尻4丁目1番1号",
+    "latitude": 34.78462955316765,
+    "longitude": 135.3810015454323,
+    "phone": "072-787-8805",
+    "prefecture": "兵庫県",
+    "xaccount": "https://x.com/ms_itamikoya",
+    "url": "https://www.miraiyashoten.co.jp/shop/%E6%9C%AA%E6%9D%A5%E5%B1%8B%E6%9B%B8%E5%BA%97%E4%BC%8A%E4%B8%B9%E6%98%86%E9%99%BD/",
+    "image": "./image/Gp10Lh7aYAEetUm.jpg"
   },
   {
     "id": 5,
-    "name": "ブックファースト 新宿店",
-    "address": "東京都新宿区西新宿1-1-3 小田急新宿店内B2F",
-    "latitude": 35.6921,
-    "longitude": 139.6994,
-    "phone": "03-5339-7611",
-    "prefecture": "東京都"
+    "name": "未来屋書店 水戸内原店",
+    "address": "茨城県水戸市内原２丁目１ イオンモール水戸内原 ３Ｆ",
+    "latitude": 36.37656852026815,
+    "longitude": 140.35940535952432,
+    "phone": "029-259-9151",
+    "prefecture": "茨城県",
+    "xaccount": "https://x.com/ms_mitouchihara",
+    "url": "https://www.miraiyashoten.co.jp/shop/%E6%9C%AA%E6%9D%A5%E5%B1%8B%E6%9B%B8%E5%BA%97%E6%B0%B4%E6%88%B8%E5%86%85%E5%8E%9F/",
+    "image": "./image/GpDHDzMaUAA4PSZ.jpg"
   },
   {
     "id": 6,
-    "name": "啓文堂書店 吉祥寺店",
-    "address": "東京都武蔵野市吉祥寺本町2-3-1 コピス吉祥寺B館",
-    "latitude": 35.7025,
-    "longitude": 139.5800,
-    "phone": "0422-22-3030",
-    "prefecture": "東京都"
+    "name": "TSUTAYA 町田木曽店",
+    "address": "東京都町田市木曽西１丁目１７−１３",
+    "latitude": 35.56568455084198,
+    "longitude": 139.4194251018523,
+    "phone": "42-789-7712",
+    "prefecture": "東京都",
+    "xaccount": "https://x.com/tsutaya2812?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1726957392213233774%7Ctwgr%5E39845b45c2cd3e8b7f2ba61e6c8d8488d425a3e8%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fholoch.blog.jp%2Farchives%2F23713761.html",
+    "url": "https://store-tsutaya.tsite.jp/store/detail?storeId=2812",
+    "image": "./image/GXHfetmbEAIntmH.jpg"
   },
   {
     "id": 7,
-    "name": "Book&Cafe Stand 新海月",
-    "address": "神奈川県鎌倉市長谷2-8-17",
-    "latitude": 35.3120,
-    "longitude": 139.5345,
-    "phone": "0467-81-3661",
-    "prefecture": "神奈川県"
+    "name": "紀伊國屋書店 吉祥寺東急店",
+    "address": "東京都世田谷区三宿１丁目１０−１０",
+    "latitude": 35.70522414765808,
+    "longitude": 139.5780225098097,
+    "phone": "0422-21-1810",
+    "prefecture": "東京都",
+    "xaccount": "https://x.com/Kino_Kichijoji",
+    "url": "https://store.kinokuniya.co.jp/store/kichijoji-tokyu-store/",
+    "image": "./image/GmDIhoUbcAI3maz.jpg"
   },
   {
     "id": 8,
-    "name": "ジュンク堂書店 池袋本店",
-    "address": "東京都豊島区南池袋2-15-5",
-    "latitude": 35.7275,
-    "longitude": 139.7120,
-    "phone": "03-5956-6111",
-    "prefecture": "東京都"
-  },
-  {
-    "id": 9,
-    "name": "TSUTAYA BOOKSTORE 代官山蔦屋書店",
-    "address": "東京都渋谷区猿楽町17-5 代官山 T-SITE",
-    "latitude": 35.6498,
-    "longitude": 139.6984,
-    "phone": "03-3770-2525",
-    "prefecture": "東京都"
-  },
-  {
-    "id": 10,
-    "name": "八重洲ブックセンター 本店",
-    "address": "東京都中央区八重洲2-5-1",
-    "latitude": 35.6784,
-    "longitude": 139.7686,
-    "phone": "03-3281-8182",
-    "prefecture": "東京都"
+    "name": "コーチャンフォーミュンヘン大橋店",
+    "address": "北海道札幌市豊平区中の島１条１３丁目１−１",
+    "latitude": 43.01769179408846,
+    "longitude": 141.3560686960444,
+    "phone": "011-817-4000",
+    "prefecture": "北海道",
+    "xaccount": "https://x.com/CoachandFour_JP",
+    "url": "https://www.coachandfour-myunhen.jp/",
+    "image": "./image/default.jpg"
   }
-] 
+]
