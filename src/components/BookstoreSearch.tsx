@@ -147,22 +147,56 @@ const BookstoreSearch: React.FC = () => {
           <div className="bookstore-list">
             {filteredBookstores.map(bookstore => (
               <div key={bookstore.id} className="bookstore-list-item" style={{ backgroundColor: '#ffffff' }}>
-                <h3 className="bookstore-name">
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${bookstore.latitude},${bookstore.longitude}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: '#3498db' }}
-                  >
-                    {bookstore.name}
-                  </a>
-                </h3>
-                <p className="bookstore-prefecture" style={{ color: '#666' }}>{bookstore.prefecture}</p>
-                <p className="bookstore-address" style={{ color: '#555' }}>{bookstore.address}</p>
-                <p className="bookstore-phone" style={{ color: '#555' }}>TEL: {bookstore.phone}</p>
-                <div className="bookstore-tags">
-                  <span className="tag" style={{ backgroundColor: '#3498db' }}>MAP</span>
-                  {bookstore.phone && <span className="tag" style={{ backgroundColor: '#3498db' }}>TEL</span>}
+                <div className="bookstore-content">
+                  <div className="bookstore-info">
+                    <h3 className="bookstore-name">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${bookstore.latitude},${bookstore.longitude}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#3498db' }}
+                      >
+                        {bookstore.name}
+                      </a>
+                    </h3>
+                    <p className="bookstore-prefecture" style={{ color: '#666' }}>{bookstore.prefecture}</p>
+                    <p className="bookstore-address" style={{ color: '#555' }}>{bookstore.address}</p>
+                    <p className="bookstore-phone" style={{ color: '#555' }}>TEL: {bookstore.phone}</p>
+                    {bookstore.url && (
+                      <p className="bookstore-url">
+                        <a
+                          href={bookstore.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: '#3498db' }}
+                        >
+                          公式サイト
+                        </a>
+                      </p>
+                    )}
+                    <div className="bookstore-tags">
+                      <span className="tag" style={{ backgroundColor: '#3498db' }}>MAP</span>
+                      {bookstore.phone && <span className="tag" style={{ backgroundColor: '#3498db' }}>TEL</span>}
+                      {bookstore.url && <span className="tag" style={{ backgroundColor: '#3498db' }}>SITE</span>}
+                      {bookstore.xaccount && <span className="tag" style={{ backgroundColor: '#1DA1F2' }}>X</span>}
+                    </div>
+                  </div>
+                  <div className="bookstore-image">
+                    <img
+                      src={bookstore.image || './image/default.jpg'}
+                      alt={`${bookstore.name}の外観`}
+                      style={{
+                        maxWidth: '100%',
+                        maxHeight: '150px',
+                        objectFit: 'cover',
+                        borderRadius: '4px'
+                      }}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = './image/default.jpg';
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             ))}

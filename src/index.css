@@ -829,3 +829,46 @@ input:focus, select:focus, textarea:focus {
   background-color: #f8f8f8 !important;
   color: #999 !important;
 }
+
+/* 書店リストのレイアウト調整 */
+.bookstore-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.bookstore-info {
+  flex: 1;
+  min-width: 0; /* テキストオーバーフローを防止 */
+}
+
+.bookstore-image {
+  flex: 0 0 auto;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .bookstore-content {
+    flex-direction: column;
+  }
+  
+  .bookstore-image {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .bookstore-image img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+  }
+}
+
+.bookstore-url {
+  margin: 0.25rem 0;
+}

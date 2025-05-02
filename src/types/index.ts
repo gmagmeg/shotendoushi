@@ -5,7 +5,10 @@ export interface Bookstore {
   latitude: number;
   longitude: number;
   phone: string;
-  prefecture?: string; // 都道府県情報（オプション）
+  prefecture: string;
+  xaccount?: string; // X（旧Twitter）のアカウント
+  url?: string; // 書店のWebサイト
+  image?: string; // 書店の画像パス
 }
 
 export interface Prefecture {
