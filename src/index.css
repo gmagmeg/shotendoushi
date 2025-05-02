@@ -619,6 +619,9 @@ input:focus, select:focus, textarea:focus {
 .bookstore-info {
   flex: 1;
   min-width: 0; /* テキストオーバーフローを防止 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .bookstore-image {
@@ -643,7 +646,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .bookstore-name {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.25rem;
   font-size: 1.2rem;
 }
 
@@ -659,20 +662,26 @@ input:focus, select:focus, textarea:focus {
 .bookstore-prefecture {
   font-size: 0.9rem;
   color: #666;
-  margin: 0 0 0.75rem;
+  margin: 0;
 }
 
 .bookstore-address, 
 .bookstore-phone {
-  margin: 0 0 0.5rem;
+  margin: 0;
   font-size: 0.95rem;
   color: #555;
 }
 
 .bookstore-tags {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.bookstore-url,
+.bookstore-xaccount {
+  margin: 0;
 }
 
 .tag {
@@ -682,8 +691,4 @@ input:focus, select:focus, textarea:focus {
   color: white;
   background-color: var(--primary-color);
   border-radius: 3px;
-}
-
-.bookstore-url {
-  margin: 0.25rem 0;
 }

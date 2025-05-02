@@ -174,16 +174,32 @@ const BookstoreSearch: React.FC = () => {
                         </a>
                       </p>
                     )}
+                    {bookstore.xaccount && (
+                      <p className="bookstore-xaccount">
+                        <a
+                          href={bookstore.xaccount}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: '#3498db' }}
+                        >
+                          SNSアカウント
+                        </a>
+                      </p>
+                    )}
                     <div className="bookstore-tags">
-                      <span className="tag" style={{ backgroundColor: '#3498db' }}>MAP</span>
-                      {bookstore.phone && <span className="tag" style={{ backgroundColor: '#3498db' }}>TEL</span>}
-                      {bookstore.url && <span className="tag" style={{ backgroundColor: '#3498db' }}>SITE</span>}
-                      {bookstore.xaccount && <span className="tag" style={{ backgroundColor: '#1DA1F2' }}>X</span>}
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${bookstore.latitude},${bookstore.longitude}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#3498db', fontSize: '0.9rem' }}
+                      >
+                        地図を見る
+                      </a>
                     </div>
                   </div>
                   <div className="bookstore-image">
                     <img
-                      src={bookstore.image?.replace('./image/', '/image/') || '/image/default.jpg'}
+                      src={bookstore.image?.replace('./image/', './image/') || './image/default.jpg'}
                       alt={`${bookstore.name}の外観`}
                       style={{
                         width: '100%',

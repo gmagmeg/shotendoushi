@@ -49,6 +49,18 @@ const BookstoreList: React.FC<BookstoreListProps> = ({ bookstores, isLoading }) 
                   </a>
                 </p>
               )}
+              {bookstore.xaccount && (
+                <p className="bookstore-xaccount">
+                  <a
+                    href={bookstore.xaccount}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: '#3498db' }}
+                  >
+                    SNSアカウント
+                  </a>
+                </p>
+              )}
               <div className="bookstore-tags">
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${bookstore.latitude},${bookstore.longitude}`}
@@ -56,12 +68,10 @@ const BookstoreList: React.FC<BookstoreListProps> = ({ bookstores, isLoading }) 
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${bookstore.name}のGoogleマップを開く`}
-                  style={{ color: '#3498db' }}
+                  style={{ color: '#3498db', fontSize: '0.9rem' }}
                 >
-                  Google マップで見る
+                  地図を見る
                 </a>
-                {bookstore.url && <span className="tag" style={{ backgroundColor: '#3498db' }}>SITE</span>}
-                {bookstore.xaccount && <span className="tag" style={{ backgroundColor: '#1DA1F2' }}>X</span>}
               </div>
             </div>
             <div className="bookstore-image">
