@@ -137,6 +137,9 @@ body {
 
 /* 検索結果一覧 */
 .bookstore-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
@@ -704,5 +707,36 @@ body {
     background-color: #444;
     color: #f5f5f5;
     border-color: #666;
+  }
+}
+
+/* 書店リスト表示 */
+.bookstore-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.bookstore-list-item {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookstore-list-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .bookstore-list-item {
+    background-color: #333;
+    border-color: #444;
   }
 }
