@@ -109,7 +109,7 @@ const BookstoreSearch: React.FC = () => {
                         {bookstore.name}
                       </a>
                     </h3>
-                    <div className="lg:hidden mb-4">
+                    <div className="block lg:hidden mb-4">
                       <div className="bookstore-image">
                         <img
                           src={bookstore.image?.replace('./image/', './image/') || './image/default.jpg'}
