@@ -48,6 +48,21 @@ const BookstoreSearch: React.FC = () => {
     setFilteredBookstores(filtered);
   };
 
+  // 画像レンダリング処理を共通化
+  const renderBookstoreImage = (bookstore: Bookstore, className: string) => (
+    <div className={className}>
+      <img
+        src={bookstore.image?.replace('./image/', './image/') || './image/default.jpg'}
+        alt={`${bookstore.name}の外観`}
+        loading="lazy"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = '/image/default.jpg';
+        }}
+      />
+    </div>
+  );
+
   return (
     <div className="app-container">
       <header className="app-header">
@@ -109,19 +124,8 @@ const BookstoreSearch: React.FC = () => {
                         {bookstore.name}
                       </a>
                     </h3>
-                    <div className="block lg:hidden mb-4">
-                      <div className="bookstore-image">
-                        <img
-                          src={bookstore.image?.replace('./image/', './image/') || './image/default.jpg'}
-                          alt={`${bookstore.name}の外観`}
-                          loading="lazy"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = '/image/default.jpg';
-                          }}
-                        />
-                      </div>
-                    </div>
+                    {/* モバイル向け画像表示 */}
+                    {renderBookstoreImage(bookstore, "block md:hidden bookstore-image mb-4")}
                     <p className="bookstore-prefecture">{bookstore.prefecture}</p>
                     <p className="bookstore-address">{bookstore.address}</p>
                     <p className="bookstore-phone">TEL: {bookstore.phone}</p>
@@ -157,17 +161,8 @@ const BookstoreSearch: React.FC = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="hidden lg:block bookstore-image">
-                    <img
-                      src={bookstore.image?.replace('./image/', './image/') || './image/default.jpg'}
-                      alt={`${bookstore.name}の外観`}
-                      loading="lazy"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = '/image/default.jpg';
-                      }}
-                    />
-                  </div>
+                  {/* デスクトップ向け画像表示 */}
+                  {renderBookstoreImage(bookstore, "hidden md:flex bookstore-image")}
                 </div>
               </div>
             ))}
