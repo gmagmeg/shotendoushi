@@ -100,13 +100,10 @@ const BookstoreSearch: React.FC = () => {
       <main style={{ backgroundColor: '#ffffff' }}>
         <section className="search-section" style={{ backgroundColor: '#ffffff' }}>
           <div className="filter-section" style={{ backgroundColor: '#f5f5f5' }}>
-            <h2 className="section-title">書店を絞り込む</h2>
+            <h2 className="section-title">都道府県で絞り込み</h2>
 
             <div className="filter-controls">
               <div className="filter-group">
-                <label htmlFor="prefectureFilter" className="filter-label">
-                  都道府県で絞り込み:
-                </label>
                 <div className="filter-row">
                   <select
                     id="prefectureFilter"
@@ -170,7 +167,7 @@ const BookstoreSearch: React.FC = () => {
                           rel="noopener noreferrer"
                           style={{ color: '#3498db' }}
                         >
-                          公式サイト
+                          <span className="icon" role="img" aria-label="公式サイト">🌐</span> 公式サイト
                         </a>
                       </p>
                     )}
@@ -182,7 +179,7 @@ const BookstoreSearch: React.FC = () => {
                           rel="noopener noreferrer"
                           style={{ color: '#3498db' }}
                         >
-                          SNSアカウント
+                          <span className="icon" role="img" aria-label="SNSアカウント">🐦</span> SNSアカウント
                         </a>
                       </p>
                     )}
@@ -193,7 +190,7 @@ const BookstoreSearch: React.FC = () => {
                         rel="noopener noreferrer"
                         style={{ color: '#3498db', fontSize: '0.9rem' }}
                       >
-                        地図を見る
+                        <span className="icon" role="img" aria-label="地図">📍</span> 地図を見る
                       </a>
                     </div>
                   </div>

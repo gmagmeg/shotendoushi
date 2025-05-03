@@ -45,7 +45,7 @@ const BookstoreList: React.FC<BookstoreListProps> = ({ bookstores, isLoading }) 
                     rel="noopener noreferrer"
                     style={{ color: '#3498db' }}
                   >
-                    公式サイト
+                    <span className="icon" role="img" aria-label="公式サイト">🌐</span> 公式サイト
                   </a>
                 </p>
               )}
@@ -57,7 +57,7 @@ const BookstoreList: React.FC<BookstoreListProps> = ({ bookstores, isLoading }) 
                     rel="noopener noreferrer"
                     style={{ color: '#3498db' }}
                   >
-                    SNSアカウント
+                    <span className="icon" role="img" aria-label="SNSアカウント">🐦</span> SNSアカウント
                   </a>
                 </p>
               )}
@@ -70,7 +70,7 @@ const BookstoreList: React.FC<BookstoreListProps> = ({ bookstores, isLoading }) 
                   aria-label={`${bookstore.name}のGoogleマップを開く`}
                   style={{ color: '#3498db', fontSize: '0.9rem' }}
                 >
-                  地図を見る
+                  <span className="icon" role="img" aria-label="地図">📍</span> 地図を見る
                 </a>
               </div>
             </div>
