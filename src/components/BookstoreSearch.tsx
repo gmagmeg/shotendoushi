@@ -109,6 +109,19 @@ const BookstoreSearch: React.FC = () => {
                         {bookstore.name}
                       </a>
                     </h3>
+                    <div className="lg:hidden mb-4">
+                      <div className="bookstore-image">
+                        <img
+                          src={bookstore.image?.replace('./image/', './image/') || './image/default.jpg'}
+                          alt={`${bookstore.name}の外観`}
+                          loading="lazy"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/image/default.jpg';
+                          }}
+                        />
+                      </div>
+                    </div>
                     <p className="bookstore-prefecture">{bookstore.prefecture}</p>
                     <p className="bookstore-address">{bookstore.address}</p>
                     <p className="bookstore-phone">TEL: {bookstore.phone}</p>
@@ -144,7 +157,7 @@ const BookstoreSearch: React.FC = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="bookstore-image">
+                  <div className="hidden lg:block bookstore-image">
                     <img
                       src={bookstore.image?.replace('./image/', './image/') || './image/default.jpg'}
                       alt={`${bookstore.name}の外観`}

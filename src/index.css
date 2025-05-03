@@ -139,7 +139,7 @@
   }
 
   .bookstore-image {
-    @apply w-full lg:w-[150px] h-[150px] flex items-center justify-center bg-gray-100 rounded-md overflow-hidden relative;
+    @apply w-full h-[200px] lg:w-[150px] lg:h-[150px] flex items-center justify-center bg-gray-100 rounded-md overflow-hidden relative;
   }
 
   .bookstore-image img {
