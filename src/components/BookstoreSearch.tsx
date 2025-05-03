@@ -1,17 +1,10 @@
 import { useState, useEffect } from 'react';
-import PostalCodeSearchForm from './PostalCodeSearchForm';
-import BookstoreList from './BookstoreList';
 import { Bookstore } from '../types';
-import { getCoordinatesFromPostalCode } from '../utils/distance';
-import { findBookstoresWithinRadius, getAllBookstores } from '../utils/bookstoreService';
+import { getAllBookstores } from '../utils/bookstoreService';
 
 const BookstoreSearch: React.FC = () => {
-  const [searchResults, setSearchResults] = useState<{ bookstore: Bookstore; distance: number }[]>([]);
   const [allBookstores, setAllBookstores] = useState<Bookstore[]>([]);
   const [filteredBookstores, setFilteredBookstores] = useState<Bookstore[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [hasSearched, setHasSearched] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
   const [selectedPrefecture, setSelectedPrefecture] = useState<string>('');
   const [availablePrefectures, setAvailablePrefectures] = useState<string[]>([]);
 
@@ -27,39 +20,6 @@ const BookstoreSearch: React.FC = () => {
       .sort();
     setAvailablePrefectures(prefectures);
   }, []);
-
-  // 検索処理
-  const handleSearch = async (postalCode: string) => {
-    setIsLoading(true);
-    setError(null);
-    setHasSearched(true);
-
-    try {
-      // 郵便番号から座標を取得
-      const coordinates = await getCoordinatesFromPostalCode(postalCode);
-
-      // 座標から近くの書店を検索
-      const bookstores = findBookstoresWithinRadius(
-        coordinates.latitude,
-        coordinates.longitude
-      );
-
-      setSearchResults(bookstores);
-    } catch (err) {
-      console.error('検索エラー:', err);
-      setError('検索中にエラーが発生しました。もう一度お試しください。');
-      setSearchResults([]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  // 検索結果のクリア
-  const handleClear = () => {
-    setSearchResults([]);
-    setHasSearched(false);
-    setError(null);
-  };
 
   // 都道府県選択処理
   const handlePrefectureChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -217,7 +177,7 @@ const BookstoreSearch: React.FC = () => {
             ))}
           </div>
 
-          {filteredBookstores.length === 0 && !isLoading && (
+          {filteredBookstores.length === 0 && (
             <div className="no-results" role="status" style={{ backgroundColor: '#f5f5f5', color: '#333' }}>
               <p>条件に一致する書店が見つかりませんでした。検索条件を変更してください。</p>
             </div>
