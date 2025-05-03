@@ -49,17 +49,17 @@ const BookstoreSearch: React.FC = () => {
   };
 
   return (
-    <div className="bookstore-search-container" style={{ backgroundColor: '#ffffff' }}>
-      <header className="app-header" style={{ backgroundColor: '#ffffff' }}>
+    <div className="app-container">
+      <header className="app-header">
         <h1>あなたの街の書店"同士</h1>
         <p className="app-description">
           お近くの書店を検索、またはリストから探せます
         </p>
       </header>
 
-      <main style={{ backgroundColor: '#ffffff' }}>
-        <section className="search-section" style={{ backgroundColor: '#ffffff' }}>
-          <div className="filter-section" style={{ backgroundColor: '#f5f5f5' }}>
+      <main>
+        <section>
+          <div className="filter-section">
             <h2 className="section-title">都道府県で絞り込み</h2>
 
             <div className="filter-controls">
@@ -70,15 +70,10 @@ const BookstoreSearch: React.FC = () => {
                     className="filter-select"
                     value={selectedPrefecture}
                     onChange={handlePrefectureChange}
-                    style={{
-                      backgroundColor: '#ffffff',
-                      color: '#333',
-                      border: '1px solid #ddd'
-                    }}
                   >
-                    <option value="" style={{ color: '#333' }}>すべての都道府県</option>
+                    <option value="">すべての都道府県</option>
                     {availablePrefectures.map(prefecture => (
-                      <option key={prefecture} value={prefecture} style={{ color: '#333' }}>
+                      <option key={prefecture} value={prefecture}>
                         {prefecture}
                       </option>
                     ))}
@@ -89,7 +84,6 @@ const BookstoreSearch: React.FC = () => {
                     className="clear-filter-button"
                     aria-label="フィルタリングをクリア"
                     disabled={!selectedPrefecture}
-                    style={{ backgroundColor: '#f8f8f8' }}
                   >
                     クリア
                   </button>
@@ -99,11 +93,11 @@ const BookstoreSearch: React.FC = () => {
           </div>
         </section>
 
-        <section className="bookstore-list-section" style={{ backgroundColor: '#ffffff' }}>
+        <section className="bookstore-list-section">
           <h2 className="section-title">書店一覧 ({filteredBookstores.length}件)</h2>
           <div className="bookstore-list">
             {filteredBookstores.map(bookstore => (
-              <div key={bookstore.id} className="bookstore-list-item" style={{ backgroundColor: '#ffffff' }}>
+              <div key={bookstore.id} className="bookstore-list-item">
                 <div className="bookstore-content">
                   <div className="bookstore-info">
                     <h3 className="bookstore-name">
@@ -111,21 +105,19 @@ const BookstoreSearch: React.FC = () => {
                         href={`https://www.google.com/maps/search/?api=1&query=${bookstore.latitude},${bookstore.longitude}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ color: '#3498db' }}
                       >
                         {bookstore.name}
                       </a>
                     </h3>
-                    <p className="bookstore-prefecture" style={{ color: '#666' }}>{bookstore.prefecture}</p>
-                    <p className="bookstore-address" style={{ color: '#555' }}>{bookstore.address}</p>
-                    <p className="bookstore-phone" style={{ color: '#555' }}>TEL: {bookstore.phone}</p>
+                    <p className="bookstore-prefecture">{bookstore.prefecture}</p>
+                    <p className="bookstore-address">{bookstore.address}</p>
+                    <p className="bookstore-phone">TEL: {bookstore.phone}</p>
                     {bookstore.url && (
                       <p className="bookstore-url">
                         <a
                           href={bookstore.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ color: '#3498db' }}
                         >
                           <span className="icon" role="img" aria-label="公式サイト">🌐</span> 公式サイト
                         </a>
@@ -137,7 +129,6 @@ const BookstoreSearch: React.FC = () => {
                           href={bookstore.xaccount}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ color: '#3498db' }}
                         >
                           <span className="icon" role="img" aria-label="SNSアカウント">🐦</span> SNSアカウント
                         </a>
@@ -148,7 +139,6 @@ const BookstoreSearch: React.FC = () => {
                         href={`https://www.google.com/maps/search/?api=1&query=${bookstore.latitude},${bookstore.longitude}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ color: '#3498db', fontSize: '0.9rem' }}
                       >
                         <span className="icon" role="img" aria-label="地図">📍</span> 地図を見る
                       </a>
@@ -158,13 +148,6 @@ const BookstoreSearch: React.FC = () => {
                     <img
                       src={bookstore.image?.replace('./image/', './image/') || './image/default.jpg'}
                       alt={`${bookstore.name}の外観`}
-                      style={{
-                        width: '100%',
-                        height: '150px',
-                        objectFit: 'cover',
-                        borderRadius: '4px',
-                        backgroundColor: '#f0f0f0'
-                      }}
                       loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -178,7 +161,7 @@ const BookstoreSearch: React.FC = () => {
           </div>
 
           {filteredBookstores.length === 0 && (
-            <div className="no-results" role="status" style={{ backgroundColor: '#f5f5f5', color: '#333' }}>
+            <div className="no-results">
               <p>条件に一致する書店が見つかりませんでした。検索条件を変更してください。</p>
             </div>
           )}

@@ -1,27 +1,158 @@
-:root {
-  --primary-color: #3498db;
-  --primary-hover: #2980b9;
-  --text-color: #333;
-  --light-gray: #f5f5f5;
-  --border-color: #ddd;
-  --error-color: #e74c3c;
-  --success-color: #2ecc71;
-  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --background-color: #ffffff;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
+@layer base {
+  :root {
+    --primary-color: #3498db;
+    --primary-hover: #2980b9;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --border-color: #ddd;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --background-color: #ffffff;
 
-  /* ダークモードを無効化 */
-  color-scheme: light;
-  color: var(--text-color);
-  background-color: var(--background-color);
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    line-height: 1.6;
+    font-weight: 400;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /* ダークモードを無効化 */
+    color-scheme: light;
+    color: var(--text-color);
+    background-color: var(--background-color);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply m-0 flex min-w-[320px] min-h-screen bg-white;
+  }
+
+  #root {
+    @apply w-full m-0 auto;
+  }
+}
+
+@layer components {
+  .app-container {
+    @apply w-full max-w-7xl mx-auto p-4;
+  }
+
+  .app-header {
+    @apply text-center mb-8 py-4;
+  }
+
+  .app-header h1 {
+    @apply text-4xl mb-2 text-primary;
+  }
+
+  .app-description {
+    @apply text-base text-gray-600;
+  }
+
+  .filter-section {
+    @apply max-w-2xl mx-auto mb-8 bg-light-gray rounded-lg p-6 shadow-md;
+  }
+
+  .section-title {
+    @apply mt-0 mb-6 text-2xl text-primary border-b-2 border-primary pb-2;
+  }
+
+  .filter-controls {
+    @apply flex flex-col gap-4;
+  }
+
+  .filter-group {
+    @apply flex flex-col gap-2;
+  }
+
+  .filter-row {
+    @apply flex gap-2 items-center;
+  }
+
+  .filter-select {
+    @apply p-3 border border-border-color rounded-md text-base flex-1 bg-white text-text-color;
+  }
+
+  .clear-filter-button {
+    @apply bg-gray-100 text-gray-600 border border-border-color px-4 py-3 rounded-md text-sm cursor-pointer transition-all whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-200 hover:text-red-600;
+  }
+
+  .bookstore-list-section {
+    @apply mt-8;
+  }
+
+  .bookstore-list {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 mt-4;
+  }
+
+  .bookstore-list-item {
+    @apply bg-white border border-border-color rounded-lg p-5 shadow-md transition-transform hover:translate-y-[-3px] hover:shadow-lg;
+  }
+
+  .bookstore-content {
+    @apply flex flex-col sm:flex-row justify-between gap-4;
+  }
+
+  .bookstore-info {
+    @apply flex-1 min-w-0 flex flex-col gap-1;
+  }
+
+  .bookstore-name {
+    @apply m-0 mb-1 text-xl;
+  }
+
+  .bookstore-name a {
+    @apply text-primary no-underline hover:underline;
+  }
+
+  .bookstore-prefecture {
+    @apply text-sm text-gray-600 m-0;
+  }
+
+  .bookstore-address,
+  .bookstore-phone {
+    @apply m-0 text-[0.95rem] text-gray-700;
+  }
+
+  .bookstore-url,
+  .bookstore-xaccount {
+    @apply m-0;
+  }
+
+  .bookstore-url a,
+  .bookstore-xaccount a {
+    @apply text-primary no-underline hover:underline;
+  }
+
+  .bookstore-tags {
+    @apply flex gap-4 mt-3 flex-wrap;
+  }
+
+  .bookstore-tags a {
+    @apply text-primary text-sm no-underline hover:underline;
+  }
+
+  .bookstore-image {
+    @apply flex-none w-[150px] h-[150px] flex items-center justify-center bg-gray-100 rounded-md overflow-hidden relative;
+  }
+
+  .bookstore-image img {
+    @apply w-full h-full object-cover block transition-opacity;
+  }
+
+  .icon {
+    @apply inline-block mr-1 text-lg align-middle;
+  }
+
+  .no-results {
+    @apply text-center p-8 bg-light-gray rounded-lg mt-4 text-text-color;
+  }
 }
 
 * {
@@ -339,12 +470,6 @@ body {
   padding: 1rem;
 }
 
-.section-title {
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-}
-
 .prefecture-selector {
   margin-bottom: 2rem;
 }
@@ -447,37 +572,6 @@ body {
   }
 }
 
-/* 書店リスト表示 */
-.bookstore-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.bookstore-list-item {
-  background-color: white;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.25rem;
-  box-shadow: var(--box-shadow);
-  transition: transform 0.2s;
-  display: flex;
-  flex-direction: column;
-}
-
-.bookstore-list-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  .bookstore-list-item {
-    background-color: #333;
-    border-color: #444;
-  }
-}
-
 /* セレクトボックスのスタイル上書き */
 select, option {
   color: #333 !important;
@@ -488,12 +582,6 @@ select:focus {
   border-color: #3498db !important;
   outline: none !important;
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2) !important;
-}
-
-.filter-select {
-  background-color: #ffffff !important;
-  color: #333 !important;
-  border: 1px solid #ddd !important;
 }
 
 /* フォーム要素のスタイル強制適用 */
