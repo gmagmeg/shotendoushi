@@ -67,16 +67,13 @@ const BookstoreSearch: React.FC = () => {
     <div className="app-container">
       <header className="app-header">
         <h1>あなたの街の書店"同士</h1>
-        <p className="app-description">
-          お近くの書店を検索、またはリストから探せます
-        </p>
+        <p className="app-description"><a href="https://x.com/hashtag/%E6%9B%B8%E5%BA%AB%E3%82%89%E3%81%A7%E3%82%93?src=hashtag_click" target="_blank" rel="noopener noreferrer">#書庫らでん</a> で紹介された本を扱っている書店 <a href="https://x.com/mi_minami2701/status/1915933948552597852" target="_blank" rel="noopener noreferrer">#書店同士</a> を検索できるサイトです</p>
       </header>
 
       <main>
         <section>
           <div className="filter-section">
             <h2 className="section-title">都道府県で絞り込み</h2>
-
             <div className="filter-controls">
               <div className="filter-group">
                 <div className="filter-row">
@@ -117,7 +114,7 @@ const BookstoreSearch: React.FC = () => {
                   <div className="bookstore-info">
                     <h3 className="bookstore-name">
                       <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${bookstore.latitude},${bookstore.longitude}`}
+                        href={`${bookstore.url}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
