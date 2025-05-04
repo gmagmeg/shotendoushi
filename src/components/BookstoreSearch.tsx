@@ -67,11 +67,14 @@ const BookstoreSearch: React.FC = () => {
     <div className="app-container">
       <header className="mb-0 pb-0">
         <h1 className="flex items-center">
-          <p className='w-[30%]'>
-            <img src="/image/GqAwVYiaYAA0433.png" alt="書店" className='inline-block' />
+          <p className='w-[40%] md:w-[30%]'>
+            <img src="/image/GqAwVYiaYAA0433.png" alt="書店" className='' />
           </p>
-          <p className="w-[70%]">
-            <p className='inline-block md:text-6xl text-4xl'>あなたの街の書店"同士</p>
+          <p className="w-[60%] md:w-[70%]">
+            <p className='inline-block md:text-4xl text-2xl md:whitespace-nowrap'>
+              <span className="md:inline block">あなたの街の</span>
+              <span>書店"同士</span>
+            </p>
             <p className='mt-2 app-description md:text-xl text-sm'>
               <a href="https://x.com/hashtag/%E6%9B%B8%E5%BA%AB%E3%82%89%E3%81%A7%E3%82%93?src=hashtag_click" className='underline' target="_blank" rel="noopener noreferrer">#書庫らでん</a> で紹介された本を扱っている書店 <a href="https://x.com/mi_minami2701/status/1915933948552597852" className='underline' target="_blank" rel="noopener noreferrer">#書店同士</a> を検索できるサイトです</p>
           </p>
