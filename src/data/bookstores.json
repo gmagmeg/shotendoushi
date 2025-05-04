@@ -12,30 +12,6 @@
     "image": "/image/GpbDxE8W4AA8n9e.jpg"
   },
   {
-    "id": 2,
-    "name": "精文館書店 豊橋本店",
-    "address": "愛知県豊橋市広小路1-6",
-    "latitude": 34.76473276169385,
-    "longitude": 137.38378145486362,
-    "phone": "0532-52-1111",
-    "prefecture": "愛知県",
-    "xaccount": "https://x.com/seibunkanhonten",
-    "url": "https://www.seibunkan.co.jp/shop/honten/",
-    "image": "/image/Gp6DOqQawAQ46iL.jpg"
-  },
-  {
-    "id": 3,
-    "name": "くまざわ書店 ACADEMIA港北店",
-    "address": "神奈川県横浜市都筑区中川中央１丁目２５−１ ノースポートモール ３階",
-    "latitude": 35.55149479575837,
-    "longitude": 139.5790051275923,
-    "phone": "045-914-3320",
-    "prefecture": "神奈川県",
-    "xaccount": "https://x.com/ACADEMIA_kohoku",
-    "url": "https://www.kumabook.com/shop/kouhoku/",
-    "image": "/image/GoEQrYfbwAAEeDX.jpg"
-  },
-  {
     "id": 4,
     "name": "未来屋書店 伊丹昆陽店",
     "address": "兵庫県伊丹市池尻4丁目1番1号",
@@ -58,6 +34,30 @@
     "xaccount": "https://x.com/ms_mitouchihara",
     "url": "https://www.miraiyashoten.co.jp/shop/%E6%9C%AA%E6%9D%A5%E5%B1%8B%E6%9B%B8%E5%BA%97%E6%B0%B4%E6%88%B8%E5%86%85%E5%8E%9F/",
     "image": "/image/GpDHDzMaUAA4PSZ.jpg"
+  },
+  {
+    "id": 2,
+    "name": "精文館書店 豊橋本店",
+    "address": "愛知県豊橋市広小路1-6",
+    "latitude": 34.76473276169385,
+    "longitude": 137.38378145486362,
+    "phone": "0532-52-1111",
+    "prefecture": "愛知県",
+    "xaccount": "https://x.com/seibunkanhonten",
+    "url": "https://www.seibunkan.co.jp/shop/honten/",
+    "image": "/image/Gp6DOqQawAQ46iL.jpg"
+  },
+  {
+    "id": 3,
+    "name": "くまざわ書店 ACADEMIA港北店",
+    "address": "神奈川県横浜市都筑区中川中央１丁目２５−１ ノースポートモール ３階",
+    "latitude": 35.55149479575837,
+    "longitude": 139.5790051275923,
+    "phone": "045-914-3320",
+    "prefecture": "神奈川県",
+    "xaccount": "https://x.com/ACADEMIA_kohoku",
+    "url": "https://www.kumabook.com/shop/kouhoku/",
+    "image": "/image/GoEQrYfbwAAEeDX.jpg"
   },
   {
     "id": 6,

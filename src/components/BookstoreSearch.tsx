@@ -65,15 +65,23 @@ const BookstoreSearch: React.FC = () => {
 
   return (
     <div className="app-container">
-      <header className="app-header">
-        <h1>あなたの街の書店"同士</h1>
-        <p className="app-description"><a href="https://x.com/hashtag/%E6%9B%B8%E5%BA%AB%E3%82%89%E3%81%A7%E3%82%93?src=hashtag_click" target="_blank" rel="noopener noreferrer">#書庫らでん</a> で紹介された本を扱っている書店 <a href="https://x.com/mi_minami2701/status/1915933948552597852" target="_blank" rel="noopener noreferrer">#書店同士</a> を検索できるサイトです</p>
+      <header className="mb-0 pb-0">
+        <h1 className="flex items-center">
+          <p className='w-[30%]'>
+            <img src="/image/GqAwVYiaYAA0433.png" alt="書店" className='inline-block' />
+          </p>
+          <p className="w-[70%]">
+            <p className='inline-block md:text-6xl text-4xl'>あなたの街の書店"同士</p>
+            <p className='mt-2 app-description md:text-xl text-sm'>
+              <a href="https://x.com/hashtag/%E6%9B%B8%E5%BA%AB%E3%82%89%E3%81%A7%E3%82%93?src=hashtag_click" className='underline' target="_blank" rel="noopener noreferrer">#書庫らでん</a> で紹介された本を扱っている書店 <a href="https://x.com/mi_minami2701/status/1915933948552597852" className='underline' target="_blank" rel="noopener noreferrer">#書店同士</a> を検索できるサイトです</p>
+          </p>
+        </h1>
       </header>
 
       <main>
         <section>
-          <div className="filter-section">
-            <h2 className="section-title">都道府県で絞り込み</h2>
+          <div className="filter-section text-left">
+            <h2 className="section-title mb-0 pb-0 text-left">都道府県で絞り込み</h2>
             <div className="filter-controls">
               <div className="filter-group">
                 <div className="filter-row">
